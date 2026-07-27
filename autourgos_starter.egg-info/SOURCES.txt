@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+autourgos_starter/__init__.py
+autourgos_starter/py.typed
+autourgos_starter.egg-info/PKG-INFO
+autourgos_starter.egg-info/SOURCES.txt
+autourgos_starter.egg-info/dependency_links.txt
+autourgos_starter.egg-info/requires.txt
+autourgos_starter.egg-info/top_level.txt
+tests/test_starter.py
