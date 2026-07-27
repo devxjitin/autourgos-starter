@@ -1,9 +1,0 @@
-autourgos-react-agent>=1.6.0
-autourgos-openaichat>=1.0.2
-autourgos-buffer-memory>=2.0.1
-
-[dev]
-pytest>=7.0
-pytest-asyncio>=0.21
-build
-twine
