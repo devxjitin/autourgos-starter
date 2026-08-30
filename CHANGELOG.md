@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.3] - 2026-08-30
+
+- BREAKING: dependency migrated from `autourgos-react-agent>=1.7.1` to
+  `autourgos-agent>=2.0.2`. `autourgos-react-agent`'s PyPI releases are now
+  fully yanked and none satisfy `>=1.7.1` anyway, so this package was
+  completely uninstallable from PyPI until this release — `pip install
+  autourgos-starter` failed with "No matching distribution found for
+  autourgos-react-agent>=1.7.1" for anyone trying it.
+- The primary re-export is now `Agent` (was `ReactAgent`), matching the
+  current package name, and `create_starter_agent()` returns an `Agent`
+  instance. `ReactAgent` is kept as a deprecated alias for `Agent` so
+  existing imports don't break.
+
 ## [1.0.2] - 2026-08-30
 
 - Maintenance: bumped dependency floors to `autourgos-react-agent>=1.7.1` and `autourgos-openaichat>=2.3.1`, which pick up native tool-calling mode and the `invoke_with_tools`/`ainvoke_with_tools` per-call override fix. No code changes needed here — this package's own tests (8/8) pass unchanged against the bumped versions.

@@ -2,16 +2,17 @@
 Tests for autourgos_starter.create_starter_agent().
 
 No real network calls are made: OpenAIChatModel builds its HTTP client
-lazily, so constructing it (and the ReactAgent around it) never touches
+lazily, so constructing it (and the Agent around it) never touches
 the network. We pass a fake API key and never call .invoke()/.ainvoke().
 """
 
-from autourgos_react_agent import ReactAgent
+from autourgos_agent import Agent
 from autourgos_openaichat import OpenAIChatModel
 from autourgos_buffer_memory import ConversationBufferMemory
 
 from autourgos_starter import (
     create_starter_agent,
+    Agent as ReExportedAgent,
     ReactAgent as ReExportedReactAgent,
     tool as re_exported_tool,
     OpenAIChatModel as ReExportedOpenAIChatModel,
@@ -19,9 +20,9 @@ from autourgos_starter import (
 )
 
 
-def test_create_starter_agent_returns_react_agent():
+def test_create_starter_agent_returns_agent():
     agent = create_starter_agent(api_key="sk-fake-test-key")
-    assert isinstance(agent, ReactAgent)
+    assert isinstance(agent, Agent)
 
 
 def test_create_starter_agent_wires_openai_chat_model():
@@ -40,7 +41,7 @@ def test_create_starter_agent_respects_model_override():
     assert agent.llm.model == "gpt-4o"
 
 
-def test_create_starter_agent_forwards_kwargs_to_react_agent():
+def test_create_starter_agent_forwards_kwargs_to_agent():
     agent = create_starter_agent(api_key="sk-fake-test-key", verbose=True, max_iterations=5)
     assert agent.verbose is True
     assert agent.max_iterations == 5
@@ -53,7 +54,8 @@ def test_create_starter_agent_allows_memory_override():
 
 
 def test_reexports_match_underlying_classes():
-    assert ReExportedReactAgent is ReactAgent
+    assert ReExportedAgent is Agent
+    assert ReExportedReactAgent is Agent  # deprecated alias, kept for backward compat
     assert ReExportedOpenAIChatModel is OpenAIChatModel
     assert ReExportedConversationBufferMemory is ConversationBufferMemory
     assert callable(re_exported_tool)
