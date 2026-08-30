@@ -81,6 +81,6 @@ def create_starter_agent(
         agent.add_tools(add)
         print(agent.invoke("What is 2 + 2?"))
     """
-    llm = OpenAIChatModel(model=model, api_key=api_key, system_instruction=system_prompt)
+    llm = OpenAIChatModel(model=model, api_key=api_key, system_prompt=system_prompt)
     memory = kwargs.pop("memory", None) or ConversationBufferMemory()
     return ReactAgent(llm=llm, memory=memory, **kwargs)
