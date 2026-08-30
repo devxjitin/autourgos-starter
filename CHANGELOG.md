@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.2] - 2026-08-30
+
+- Maintenance: bumped dependency floors to `autourgos-react-agent>=1.7.1` and `autourgos-openaichat>=2.3.1`, which pick up native tool-calling mode and the `invoke_with_tools`/`ainvoke_with_tools` per-call override fix. No code changes needed here — this package's own tests (8/8) pass unchanged against the bumped versions.
+
 ## [1.0.1] - 2026-08-30
 
 - Fixed: `create_starter_agent()` called `OpenAIChatModel(..., system_instruction=system_prompt)`, but that constructor param was renamed to `system_prompt` back in `autourgos-openaichat` 2.0.0 — this call was never updated, so any install resolving a current `autourgos-openaichat` raised `TypeError: OpenAIChatModel.__init__() got an unexpected keyword argument 'system_instruction'`. Only worked by accident while the dependency floor (`>=1.0.2`) still allowed pip to resolve a pre-rename version.
