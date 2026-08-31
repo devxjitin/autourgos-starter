@@ -30,7 +30,7 @@ try:
     __version__ = _v("autourgos-starter")
 except Exception:
     logger.debug("could not resolve installed version for autourgos-starter", exc_info=True)
-    __version__ = "1.0.0"
+    __version__ = "1.0.4"
 
 # Deprecated alias, kept for backward compat with code written against the
 # pre-rename autourgos-react-agent-based version of this package.
