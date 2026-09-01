@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.5] - 2026-09-01
+
+- Fixed: `autourgos-agent` dependency floor raised from `>=2.0.2` to
+  `>=3.0.0`, matching the actually tested/compatible major version — the
+  old floor didn't reflect the 3.0.0 major bump, so a fresh install could
+  have resolved an incompatible `autourgos-agent==2.0.2` with no version
+  conflict raised.
+- Docs: removed dead empty-href links on the contributor badges.
+
 ## [1.0.3] - 2026-08-30
 
 - BREAKING: dependency migrated from `autourgos-react-agent>=1.7.1` to
