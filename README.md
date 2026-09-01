@@ -4,8 +4,8 @@
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://pypi.org/project/autourgos-starter/)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://github.com/devxjitin/autourgos-starter/blob/main/LICENSE)
 [![Author](https://img.shields.io/badge/Author-Jitin%20Kumar%20Sengar-blue.svg)](https://github.com/devxjitin)
-[![Contributor](https://img.shields.io/badge/Contributor-Sonia-blueviolet.svg)]()
-[![Contributor](https://img.shields.io/badge/Contributor-Vishwanil%20Suman-blueviolet.svg)]()
+![Contributor](https://img.shields.io/badge/Contributor-Sonia-blueviolet.svg)
+![Contributor](https://img.shields.io/badge/Contributor-Vishwanil%20Suman-blueviolet.svg)
 
 The fastest way to get a working [Autourgos](https://github.com/devxjitin) agent running. Bundles the
 recommended default stack as real pip dependencies (nothing vendored or copied) and gives you one function
