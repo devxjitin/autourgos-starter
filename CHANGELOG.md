@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.6] - 2026-09-01
+
+- Metadata: added `maintainers` (Sonia, Vishwanil Suman) to `pyproject.toml`,
+  and linked the README's existing Sonia contributor badge to her GitHub
+  profile (https://github.com/dahiyasonia). No code changes.
+
 ## [1.0.5] - 2026-09-01
 
 - Fixed: `autourgos-agent` dependency floor raised from `>=2.0.2` to
