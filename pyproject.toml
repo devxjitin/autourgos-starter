@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "autourgos-starter"
-version = "1.0.7"
+version = "1.0.8"
 description = "Beginner-friendly starter bundle for the Autourgos framework — one install, one function, a working agent"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -35,6 +35,7 @@ classifiers = [
 ]
 dependencies = [
     "autourgos-agent>=3.0.0",
+    "autourgos-core>=0.3.0",
     "autourgos-openaichat>=2.3.1",
     "autourgos-buffer-memory>=2.0.1",
 ]

@@ -25,12 +25,9 @@ from autourgos_buffer_memory import ConversationBufferMemory
 
 logger = logging.getLogger(__name__)
 
-try:
-    from importlib.metadata import version as _v
-    __version__ = _v("autourgos-starter")
-except Exception:
-    logger.debug("could not resolve installed version for autourgos-starter", exc_info=True)
-    __version__ = "1.0.7"
+from autourgos_core import package_version
+
+__version__ = package_version("autourgos-starter", fallback="1.0.8", logger=logger)
 
 # Deprecated alias, kept for backward compat with code written against the
 # pre-rename autourgos-react-agent-based version of this package.
